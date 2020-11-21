@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 7.3.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_7_3_0.dtd">
+
+<service-builder dependency-injector="ds" package-path="net.carlosduran.liferay.lim">
+	<namespace>LIM</namespace>
+	<!--<entity data-source="sampleDataSource" local-service="true" name="Foo" remote-service="false" session-factory="sampleSessionFactory" table="foo" tx-manager="sampleTransactionManager uuid="true"">-->
+	<entity local-service="true" name="VM" remote-service="true" uuid="true">
+		<column name="vmId" primary="true" type="long" />
+		<column name="hostname" type="String" />
+		<column name="ip" type="String" />
+		<column name="so" type="String" />
+		<column name="vcpus" type="int" />
+		<column name="ram" type="int" />
+		<column name="storage" type="int" />
+		<column name="jdk" type="int" />
+	</entity>
+	<entity name="Scheme" local-service="true" remote-service="true" uuid="true">
+		<column name="schemeId" primary="true" type="long" />
+		<column name="name" type="String" />
+		<column name="serverHostname" type="String" />
+		<column name="serverIP" type="String" />
+		<column name="dbUser" type="String" />
+		<column name="dbPass" type="String" />
+		<column name="dbName" type="String" />
+	</entity>
+	<entity name="LiferayInstallation" remote-service="true" local-service="true" uuid="true">
+		<column name="liferayInstallationId" primary="true" type="long" />
+		<column name="description" type="String" />
+		<column name="path" type="String" />
+		<column name="version" type="String" />
+		<column name="vmId" type="long" />
+		<column name="schemeId" type="long" />
+	</entity>
+</service-builder>

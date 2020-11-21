@@ -1,0 +1,19 @@
+dependencies {
+	compile project(":modules:liferay-installations-manager-sb:liferay-installations-manager-sb-api")
+
+	compileOnly group: "com.liferay.portal", name: "release.portal.api"
+}
+
+buildService {
+	apiDir = "../liferay-installations-manager-sb-api/src/main/java"
+}
+
+group = "net.carlosduran.liferay.lim.sb"
+
+tasks.withType(JavaCompile) {
+
+	// Generated classes using Jodd library are unable to be read when compiled against JDK 11
+
+	sourceCompatibility = JavaVersion.VERSION_1_8
+	targetCompatibility = JavaVersion.VERSION_1_8
+}
