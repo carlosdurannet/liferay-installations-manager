@@ -23,12 +23,30 @@
 		<column name="dbPass" type="String" />
 		<column name="dbName" type="String" />
 	</entity>
-	<entity name="LiferayInstallation" remote-service="true" local-service="true" uuid="true">
-		<column name="liferayInstallationId" primary="true" type="long" />
+	<entity name="Installation" remote-service="true" local-service="true" uuid="true">
+		<column name="installationId" primary="true" type="long" />
 		<column name="description" type="String" />
 		<column name="path" type="String" />
 		<column name="version" type="String" />
 		<column name="vmId" type="long" />
 		<column name="schemeId" type="long" />
+        <column name="modules" type="Collection" mapping-table="Installations_Modules"></column>
 	</entity>
+    <entity name="Module" local-service="true">
+        <column name="moduleId" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
+        <column name="type" type="int"></column>
+        <column name="description" type="String"></column>
+        <column name="gitlabUrl" type="String"></column>
+        <column name="installations" type="Collection" mapping-table="Installations_Modules"></column>
+    </entity>
+    <entity name="Site" local-service="true">
+        <column name="siteId" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
+        <column name="private" type="boolean"></column>
+        <column name="friendlyUrl" type="String"></column>
+        <column name="virtualhost" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="installationId" type="long"></column>
+    </entity>
 </service-builder>
