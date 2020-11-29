@@ -30,23 +30,25 @@
 		<column name="version" type="String" />
 		<column name="vmId" type="long" />
 		<column name="schemeId" type="long" />
-        <column name="modules" type="Collection" mapping-table="Installations_Modules"></column>
 	</entity>
-    <entity name="Module" local-service="true">
-        <column name="moduleId" type="long" primary="true"></column>
-        <column name="name" type="String"></column>
-        <column name="type" type="int"></column>
-        <column name="description" type="String"></column>
-        <column name="gitlabUrl" type="String"></column>
-        <column name="installations" type="Collection" mapping-table="Installations_Modules"></column>
-    </entity>
-    <entity name="Site" local-service="true">
-        <column name="siteId" type="long" primary="true"></column>
-        <column name="name" type="String"></column>
-        <column name="private" type="boolean"></column>
-        <column name="friendlyUrl" type="String"></column>
-        <column name="virtualhost" type="String"></column>
-        <column name="description" type="String"></column>
-        <column name="installationId" type="long"></column>
-    </entity>
+	<entity name="Module" remote-service="true" local-service="true" uuid="true">
+		<column name="moduleId" type="long" primary="true" />
+		<column name="name" type="String" />
+		<column name="type" type="int" />
+		<column name="description" type="String" />
+		<column name="gitlabUrl" type="String" />
+	</entity>
+	<entity name="Site" remote-service="true" local-service="true">
+		<column name="siteId" type="long" primary="true"/>
+		<column name="name" type="String" />
+		<column name="privateSite" type="boolean" />
+		<column name="friendlyUrl" type="String" />
+		<column name="virtualhost" type="String" />
+		<column name="description" type="String" />
+		<column name="installationId" type="long" />
+	</entity>
+	<entity name="Installations_Modules" remote-service="true" local-service="true" uuid="true">
+		<column name="installationId" type="long" primary="true" />
+		<column name="moduleId" type="long" primary="true" />
+	</entity>
 </service-builder>

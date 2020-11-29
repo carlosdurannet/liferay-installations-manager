@@ -1,10 +1,10 @@
 Bundle-Name: liferay-installations-manager-sb-api
-Bundle-SymbolicName: net.carlosduran.liferay.lim.sb.api
+Bundle-SymbolicName: net.carlosdran.liferay.lim.sb.api
 Bundle-Version: 1.0.0
 Export-Package:\
-	net.carlosduran.liferay.lim.sb.exception,\
-	net.carlosduran.liferay.lim.sb.model,\
-	net.carlosduran.liferay.lim.sb.service,\
-	net.carlosduran.liferay.lim.sb.service.persistence
+	net.carlosdran.liferay.lim.sb.exception,\
+	net.carlosdran.liferay.lim.sb.model,\
+	net.carlosdran.liferay.lim.sb.service,\
+	net.carlosdran.liferay.lim.sb.service.persistence
 -check: EXPORTS
 -includeresource: META-INF/service.xml=../liferay-installations-manager-sb-service/service.xml

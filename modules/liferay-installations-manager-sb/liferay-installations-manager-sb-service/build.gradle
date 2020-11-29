@@ -8,7 +8,7 @@ buildService {
 	apiDir = "../liferay-installations-manager-sb-api/src/main/java"
 }
 
-group = "net.carlosduran.liferay.lim.sb"
+group = "net.carlosdran.liferay.lim.sb"
 
 tasks.withType(JavaCompile) {
 

@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="net.carlosduran.liferay.lim.model.Installation">
+		<field name="uuid" type="String" />
+		<field name="installationId" type="long" />
+		<field name="description" type="String" />
+		<field name="path" type="String" />
+		<field name="version" type="String" />
+		<field name="vmId" type="long" />
+		<field name="schemeId" type="long" />
+	</model>
+	<model name="net.carlosduran.liferay.lim.model.Installations_Modules">
+		<field name="uuid" type="String" />
+		<field name="installationId" type="long" />
+		<field name="moduleId" type="long" />
+	</model>
+	<model name="net.carlosduran.liferay.lim.model.Module">
+		<field name="uuid" type="String" />
+		<field name="moduleId" type="long" />
+		<field name="name" type="String" />
+		<field name="type" type="int" />
+		<field name="description" type="String" />
+		<field name="gitlabUrl" type="String" />
+	</model>
+	<model name="net.carlosduran.liferay.lim.model.Scheme">
+		<field name="uuid" type="String" />
+		<field name="schemeId" type="long" />
+		<field name="name" type="String" />
+		<field name="serverHostname" type="String" />
+		<field name="serverIP" type="String" />
+		<field name="dbUser" type="String" />
+		<field name="dbPass" type="String" />
+		<field name="dbName" type="String" />
+	</model>
+	<model name="net.carlosduran.liferay.lim.model.Site">
+		<field name="siteId" type="long" />
+		<field name="name" type="String" />
+		<field name="privateSite" type="boolean" />
+		<field name="friendlyUrl" type="String" />
+		<field name="virtualhost" type="String" />
+		<field name="description" type="String" />
+		<field name="installationId" type="long" />
+	</model>
+	<model name="net.carlosduran.liferay.lim.model.VM">
+		<field name="uuid" type="String" />
+		<field name="vmId" type="long" />
+		<field name="hostname" type="String" />
+		<field name="ip" type="String" />
+		<field name="so" type="String" />
+		<field name="vcpus" type="int" />
+		<field name="ram" type="int" />
+		<field name="storage" type="int" />
+		<field name="jdk" type="int" />
+	</model>
+</model-hints>
